@@ -30,4 +30,4 @@ video.addEventListener('play', () => {
   }, 100)
 })*/
 
-startVideo();
+//startVideo();
