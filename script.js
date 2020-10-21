@@ -21,10 +21,15 @@ video.addEventListener('play', () => {
   const displaySize = { width: video.width, height: video.height }
   faceapi.matchDimensions(canvas, displaySize)
   setInterval(async () => {
+    console.log("11111")
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())//.withFaceLandmarks().withFaceExpressions()
+    console.log("22222")
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
+    console.log("33333")
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+    console.log("44444")
     faceapi.draw.drawDetections(canvas, resizedDetections)
+    console.log("55555")
     //faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
   }, 3000)
