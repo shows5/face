@@ -3,7 +3,7 @@ const video = document.getElementById('video')
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('models/'),
   faceapi.nets.faceLandmark68Net.loadFromUri('models/'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('models/'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('models/face_recognition_model-weights_manifest.json'),
   faceapi.nets.faceExpressionNet.loadFromUri('models/')
 ]).then(startVideo)
 
@@ -27,7 +27,7 @@ video.addEventListener('play', () => {
     faceapi.draw.drawDetections(canvas, resizedDetections)
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-  }, 100)
+  }, 3000)
 })
 
 //startVideo();
