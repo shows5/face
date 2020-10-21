@@ -1,7 +1,7 @@
 const video = document.getElementById('video')
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+  faceapi.nets.tinyFaceDetector.loadFromUri('https://raw.githubusercontent.com/shows5/face/main/models/tiny_face_detector_model-weights_manifest.json'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
   faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
   faceapi.nets.faceExpressionNet.loadFromUri('/models')
@@ -30,4 +30,4 @@ video.addEventListener('play', () => {
   }, 100)
 })*/
 
-//startVideo();
+startVideo();
